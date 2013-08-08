@@ -1,0 +1,4 @@
+labyrinthe
+==========
+
+Simple labyrinthe creator
