@@ -38,14 +38,12 @@ class Lab():
 		    return Node;
 
 		if (W < H):
-			logging.info('horizontal')
 			Height_Left = alea(1,H-1)
 			Height_Right = (H - Height_Left)
 			Door_Offset = alea(1,W)
 			Wall = 'horizontal'
 			Wall_Offset = Height_Left
 		elif (W > H):
-			logging.info('vertical')
 			Width_Left = alea(1,W-1)
 			Width_Right = W - Width_Left
 			Door_Offset = alea(1,H)
@@ -53,14 +51,12 @@ class Lab():
 			Wall_Offset = Width_Left
 		else:
 			if alea(0,1) == 1:
-				logging.info('horizontal')
 				Height_Left = alea(1,H-1)
 				Height_Right = (H - Height_Left)
 				Door_Offset = alea(1,W)
 				Wall = 'horizontal'
 				Wall_Offset = Height_Left
 			else:
-				logging.info('vertical')
 				Width_Left = alea(1,W-1)
 				Width_Right = W - Width_Left
 				Door_Offset = alea(1,H)
@@ -93,7 +89,6 @@ class Lab():
 		if Node.wall == 'no_wall':
 			return
 		elif Node.wall == 'horizontal':	
-			logging.info('svg : horizontal')    
 			A_X = Node.x
 			A_Y = Node.y + (Node.wallOffset)*Constante_Pas
 			B_Y = A_Y
@@ -102,7 +97,7 @@ class Lab():
 			C_Y = A_Y
 			D_Y = B_Y
 			C_X = A_X + (Node.doorOffset-1)*Constante_Pas
-			D_X = A_X + (Constante_Pas)
+			D_X = C_X + (Constante_Pas)
 			
 			self.F.write_line(A_X,A_Y,C_X,C_Y)
 			self.F.write_line(D_X,D_Y,B_X,B_Y)
@@ -112,7 +107,6 @@ class Lab():
 			Node.right.x = Node.x
 			Node.right.y = A_Y
 		else:
-			logging.info('svg : vertical')
 			A_Y = Node.y
 			A_X = Node.x + (Node.wallOffset)*Constante_Pas
 			B_X = A_X
@@ -121,20 +115,20 @@ class Lab():
 			C_X = A_X
 			D_X = B_X
 			C_Y = A_Y + (Node.doorOffset-1)*Constante_Pas
-			D_Y = A_Y + (Constante_Pas)
+			D_Y = C_Y + (Constante_Pas)
 			
 			self.F.write_line(A_X,A_Y,C_X,C_Y)
 			self.F.write_line(D_X,D_Y,B_X,B_Y)
 			
 			Node.left.x = Node.x
 			Node.left.y = Node.y
-			Node.right.x = Node.x
-			Node.right.y = A_X
+			Node.right.y = Node.y
+			Node.right.x = A_X
 	    
 
 		self.Tree_SVG(Node.left)
 		self.Tree_SVG(Node.right)
 
 
-S = Lab(3,3)
+S = Lab(100,100)
 S.printLab('lab10.svg')
