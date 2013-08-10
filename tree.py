@@ -9,13 +9,13 @@ class Node():
 		self.right = None
 		self.left = None
 		self.data = data
-		self.walltype = None #wall orientation
-		self.x = None #absolute coordinates of start of box represented by the node
-		self.y = None #seWidth, Height : Positive; -- widht and height of box
+		self.wall = None #wall orientation
+		self.x = 0 #absolute coordinates of start of box represented by the node
+		self.y = 0 #seWidth, Height : Positive; -- widht and height of box
 		self.width = None
 		self.height = None
-		self.wallOffset = None  #offset of wall with respect to box start
-		self.doorOffset = None #offset of door with respect to box start
+		self.wallOffset = 0  #offset of wall with respect to box start
+		self.doorOffset = 0 #offset of door with respect to box start
 
 class BinaryTree():
 
@@ -44,10 +44,10 @@ class BinaryTree():
   			print root.data,
    			self.printTree(root.right)
 
-T = BinaryTree()
-root = T.addNode(0)
-node = T.addNode(1)
-root.left = node
-node2 = T.addNode(2)
-root.right = node2
-T.printTree(root)
+#T = BinaryTree()
+#root = T.addNode(0)
+#node = T.addNode(1)
+#root.left = node
+#node2 = T.addNode(2)
+#root.right = node2
+#T.printTree(root)
