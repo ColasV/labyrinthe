@@ -29,7 +29,7 @@ class SVGFile():
 		self._Footer = "</svg>"
 
 	def write_line(self,x_1,y_1,x_2,y_2):
-		self._Content += "<line x1=\"" + str(x_1) + "\" y1=\"" + str(y_1) + "\" x2=\"" + str(x_1) + "\" y2=\"" + str(y_1) + "\" style=\"stroke:rgb(0,0,0);stroke-width:0.8\" />\n"
+		self._Content += "<line x1=\"" + str(x_1) + "\" y1=\"" + str(y_1) + "\" x2=\"" + str(x_2) + "\" y2=\"" + str(y_2) + "\" style=\"stroke:rgb(0,0,0);stroke-width:0.8\" />\n"
 		
 	def _open(self):
 		try:
@@ -50,10 +50,10 @@ class SVGFile():
 
 
 
-S = SVGFile('coucou.svg')
-S.write_header(10,10)
-S.write_footer()
-S.write_line(2,2,5,5)
-S.write_in_file()
+#S = SVGFile('coucou.svg')
+#S.write_header(10,10)
+#S.write_footer()
+#S.write_line(2,2,5,5)
+#S.write_in_file()
 
 		
