@@ -1,7 +1,7 @@
 #==================================
 # Python Class to create SVG File
-# - SVG Header
-# - Line and circle
+# - SVG Header & Footer
+# - Line
 #
 # nico.vignes@gmail.com
 #==================================
@@ -46,14 +46,4 @@ class SVGFile():
 		self._File.write(self._Content)
 		self._File.write(self._Footer)
 
-		self._File.close()
-
-
-
-#S = SVGFile('coucou.svg')
-#S.write_header(10,10)
-#S.write_footer()
-#S.write_line(2,2,5,5)
-#S.write_in_file()
-
-		
+		self._File.close()	

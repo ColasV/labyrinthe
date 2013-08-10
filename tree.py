@@ -6,9 +6,12 @@
 
 class Node():
 	def __init__(self,data):
+		# Minimum to create a binary tree
 		self.right = None
 		self.left = None
 		self.data = data
+
+		# Other variable for the use in maze.py
 		self.wall = None #wall orientation
 		self.x = 0 #absolute coordinates of start of box represented by the node
 		self.y = 0 #seWidth, Height : Positive; -- widht and height of box
@@ -43,11 +46,3 @@ class BinaryTree():
   			self.printTree(root.left)
   			print root.data,
    			self.printTree(root.right)
-
-#T = BinaryTree()
-#root = T.addNode(0)
-#node = T.addNode(1)
-#root.left = node
-#node2 = T.addNode(2)
-#root.right = node2
-#T.printTree(root)
