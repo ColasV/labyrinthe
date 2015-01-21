@@ -22,8 +22,8 @@ class Node():
 
 class BinaryTree():
 
-	def __init__(self): 
-		self.root = None 
+	def __init__(self):
+		self.root = None
 
 	def addNode(self,data):
 		return Node(data)
@@ -44,5 +44,5 @@ class BinaryTree():
 			pass
 		else:
 			self.printTree(root.left)
-			print root.data,
+			print(root.data)
 			self.printTree(root.right)
