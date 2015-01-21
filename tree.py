@@ -41,8 +41,8 @@ class BinaryTree():
 
 	def printTree(self, root):
 		if root == None:
- 			pass
- 		else:
-  			self.printTree(root.left)
-  			print root.data,
-   			self.printTree(root.right)
+			pass
+		else:
+			self.printTree(root.left)
+			print root.data,
+			self.printTree(root.right)
