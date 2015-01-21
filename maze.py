@@ -70,8 +70,8 @@ class Maze():
 		Node.wall = Wall
 		Node.wallOffset = Wall_Offset
 
-		Node.left = self.Lab_Random(Width_Left,Height_Left)
-		Node.right = self.Lab_Random(Width_Right,Height_Right)
+		Node.left = self.createTree(Width_Left,Height_Left)
+		Node.right = self.createTree(Width_Right,Height_Right)
 
 		return Node;
 
@@ -135,5 +135,5 @@ class Maze():
 		self._Tree_SVG(Node.right)
 
 
-S = Lab(100,100)
+S = Maze(100,100)
 S.createSVG('lab500.svg')
